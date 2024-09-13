@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Login Autofill Extension",
+  "version": "1.0.0",
+  "description": "Autofills login credentials for specific web domains",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["storage", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
